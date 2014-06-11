@@ -29,18 +29,18 @@ Samtools: [http://samtools.sourceforge.net/samtools.shtml](http://samtools.sourc
 
 2. Organize your files so that they are named how you would like them.  In my case, I am going to name each barcode.    For now I will just cancatfiles with the same library and rep all in one .fq file.  In order to name the libraries in order of their barcode, I wrote a script below:
 
-    #!/usr/bin/env python
-    #renameFiles.py
-    #Ciera Martinez 
-    #This script takes in a .csv file as a key on how to rename files in current directory.  
+        #!/usr/bin/env python
+        #renameFiles.py
+        #Ciera Martinez 
+        #This script takes in a .csv file as a key on how to rename files in current directory.  
 
-    import os
-    import csv
-
-    #open file
-    with open('lane1Key.csv','rU') as csvfile:
-            reader = csv.reader(csvfile, delimiter = ',')
-            mydict = {rows[1]:rows[0] for rows in reader}
+        import os
+        import csv
+        
+        #open file
+        with open('lane1Key.csv','rU') as csvfile:
+                reader = csv.reader(csvfile, delimiter = ',')
+                mydict = {rows[1]:rows[0] for rows in reader}
 
     # renaming
     for fileName in os.listdir( '.' ):
